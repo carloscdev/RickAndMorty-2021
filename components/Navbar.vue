@@ -28,6 +28,7 @@ export default {};
     padding: 1rem 0;
     ul {
       display: flex;
+      padding: 0;
       li {
         margin-left: 1.5rem;
       }
