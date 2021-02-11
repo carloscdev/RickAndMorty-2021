@@ -33,14 +33,9 @@ export default {
   methods: {
     charactersAll() {
       for (let i = 0; i < 6; i++) {
-        let randomN = parseInt(Math.random() * 100);
-        if (randomN === 0) {
-          randomN++;
-        }
-        if (randomN > 671) {
-          randomN--;
-        }
-        this.charactersRandom.push(randomN);
+        let randomN = Math.floor(Math.random() * (670 - 1 + 1) + 1);
+
+        this.charactersRandom.push(randomN + i);
       }
       console.log(this.charactersRandom.join());
       return axios
@@ -64,7 +59,6 @@ export default {
       color: var(--color-white);
     }
     &--characters {
-      padding: 3rem 0;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 3rem;

@@ -59,9 +59,13 @@ export default {
     &:hover {
       box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.48);
     }
+    @media (max-width: 560px) {
+      height: 420px;
+      grid-template-columns: 1fr;
+    }
   }
   &__image {
-    background-position: center;
+    background-position: top center;
     background-size: cover;
     height: 210px;
     background-repeat: no-repeat;

@@ -29,7 +29,7 @@ export default {};
 .header {
   height: 100vh;
   max-height: 800px;
-  background-image: url("http://api.thumbr.it/whitenoise-361x370.png?background=f7f7f7ff&noise=171717&density=5&opacity=15");
+  /* background-image: url("https://api.thumbr.it/whitenoise-361x370.png?background=f7f7f7ff&noise=171717&density=5&opacity=15"); */
   display: flex;
   align-items: center;
   &__container {

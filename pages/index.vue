@@ -33,6 +33,7 @@ h1 {
 h2 {
   font-size: 3rem;
   position: relative;
+  margin-bottom: 3rem;
   &:before {
     content: "";
     background-color: var(--color-white);
