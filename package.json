@@ -1,0 +1,21 @@
+{
+  "name": "rick-and-morty",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.0",
+    "@splidejs/vue-splide": "^0.3.5",
+    "nuxt": "^2.14.0"
+  },
+  "devDependencies": {
+    "fibers": "^5.0.0",
+    "sass": "^1.32.7",
+    "sass-loader": "^10.1.1"
+  }
+}
