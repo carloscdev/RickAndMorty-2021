@@ -1,7 +1,9 @@
 <template>
   <div class="navbar">
     <nav class="navbar__container container">
-      <img src="../assets/images/logo.png" alt="Logo" />
+      <nuxt-link to="/">
+        <img src="../assets/images/logo.png" alt="Logo" />
+      </nuxt-link>
       <ul>
         <li><nuxt-link to="/">Home</nuxt-link></li>
         <li><nuxt-link to="/characters">Characters</nuxt-link></li>
@@ -32,16 +34,19 @@ export default {};
       li {
         margin-left: 1.5rem;
       }
+      @media (max-width: 620px) {
+        display: none;
+      }
+      .nuxt-link-exact-active {
+        background-color: var(--color-dark);
+        padding: 1rem;
+        color: var(--color-white);
+        border-radius: 10px;
+      }
     }
   }
   img {
     width: 60px;
-  }
-  .nuxt-link-exact-active {
-    background-color: var(--color-dark);
-    padding: 1rem;
-    color: var(--color-white);
-    border-radius: 10px;
   }
 }
 </style>

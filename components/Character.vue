@@ -1,13 +1,17 @@
 <template>
-  <div class="characters">
-    <div class="characters__container">
+  <div class="character">
+    <div class="character__container" :class="height ? 'veryHeight' : ''">
       <div
-        class="characters__image"
+        class="character__image"
         :style="`background-image: url('${character.image}')`"
       ></div>
-      <div class="characters__description">
+      <div class="character__description">
         <div>
-          <h3>{{ character.name }}</h3>
+          <h3>
+            <nuxt-link :to="`/character/${character.id}`">{{
+              character.name
+            }}</nuxt-link>
+          </h3>
           <div class="statusGender">
             <span class="status" :class="statusColor"></span>
             <span>{{ character.status }} - {{ character.gender }}</span>
@@ -32,7 +36,8 @@
 <script>
 export default {
   props: {
-    character: { type: Object }
+    character: { type: Object, default: {} },
+    height: { type: Boolean, default: false }
   },
   computed: {
     statusColor() {
@@ -47,7 +52,7 @@ export default {
 </script>
 
 <style lang="scss">
-.characters {
+.character {
   &__container {
     height: 210px;
     width: 100%;
@@ -59,7 +64,7 @@ export default {
     &:hover {
       box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.48);
     }
-    @media (max-width: 560px) {
+    @media (max-width: 620px) {
       height: 420px;
       grid-template-columns: 1fr;
     }
@@ -72,7 +77,7 @@ export default {
   }
   &__description {
     color: var(--color-white);
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     div:first-child {
       display: flex;
       flex-direction: column;
@@ -101,6 +106,19 @@ export default {
       display: flex;
       align-items: center;
     }
+  }
+}
+.veryHeight {
+  height: 350px;
+  @media (max-width: 620px) {
+    height: 700px;
+  }
+  .character__image {
+    height: 350px;
+  }
+  .character__description {
+    padding: 2rem;
+    height: 350px;
   }
 }
 </style>

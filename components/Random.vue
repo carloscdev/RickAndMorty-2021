@@ -2,11 +2,12 @@
   <div class="random">
     <div class="random__container container">
       <h2>
-        Characters
+        {{ title }}
       </h2>
-      <div class="random__container--characters">
+      <Loading v-if="characters.length < 1" />
+      <div v-else class="random__container--characters">
         <div v-for="character in characters" :key="character.id">
-          <Characters :character="character" />
+          <Character :character="character" />
         </div>
       </div>
     </div>
@@ -14,38 +15,16 @@
 </template>
 
 <script>
-import axios from "axios";
-import Characters from "./Characters";
+import Character from "./Character";
+import Loading from "./Loading";
 export default {
+  props: {
+    characters: { type: Array, default: [] },
+    title: { type: String }
+  },
   components: {
-    Characters
-  },
-  data() {
-    return {
-      characters: [],
-      pages: "",
-      charactersRandom: []
-    };
-  },
-  mounted() {
-    this.charactersAll();
-  },
-  methods: {
-    charactersAll() {
-      for (let i = 0; i < 6; i++) {
-        let randomN = Math.floor(Math.random() * (670 - 1 + 1) + 1);
-
-        this.charactersRandom.push(randomN + i);
-      }
-      console.log(this.charactersRandom.join());
-      return axios
-        .get(
-          `https://rickandmortyapi.com/api/character/${this.charactersRandom.join()}`
-        )
-        .then(res => {
-          this.characters = res.data;
-        });
-    }
+    Character,
+    Loading
   }
 };
 </script>
@@ -62,7 +41,10 @@ export default {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 3rem;
-      @media (max-width: 560px) {
+      @media (max-width: 980px) {
+        grid-template-columns: 1fr;
+      }
+      @media (max-width: 620px) {
         grid-template-columns: 1fr;
       }
     }
