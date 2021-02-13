@@ -10,7 +10,7 @@
           <p>Find your favorites rick and morty characters</p>
         </div>
         <button class="btn">
-          SEARCH
+          <nuxt-link to="/search">SEARCH</nuxt-link>
         </button>
       </div>
       <div class="header__container--image">

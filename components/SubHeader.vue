@@ -3,7 +3,7 @@
     <div class="subHeader__container container">
       <h1>{{ title }}</h1>
       <button v-if="button" class="btn">
-        SEARCH
+        <nuxt-link to="/search">SEARCH</nuxt-link>
       </button>
     </div>
   </div>
@@ -28,5 +28,12 @@ export default {
   background-position: bottom center;
   display: flex;
   align-items: center;
+  h1 {
+    margin-top: 3rem;
+  }
+  @media (max-width: 620px) {
+    height: 350px;
+    background-size: 35%;
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <Random title="Characters" :characters="characters" />
+    <Random title="Random" :characters="characters" :loading="loading" />
   </div>
 </template>
 
@@ -16,7 +16,8 @@ export default {
   data() {
     return {
       characters: [],
-      charactersRandom: []
+      charactersRandom: [],
+      loading: false
     };
   },
   mounted() {
@@ -24,15 +25,16 @@ export default {
   },
   methods: {
     async charactersAll() {
+      this.loading = true;
       for (let i = 0; i < 6; i++) {
         let randomN = Math.floor(Math.random() * (670 - 1 + 1) + 1);
         this.charactersRandom.push(randomN + i);
       }
-      /* console.log(this.charactersRandom.join()); */
       const res = await this.$axios.$get(
         `/character/${this.charactersRandom.join()}`
       );
       this.characters = res;
+      this.loading = false;
     }
   }
 };

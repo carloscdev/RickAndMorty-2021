@@ -99,9 +99,6 @@ export default {
     .color-white {
       background-color: white;
     }
-    .gray {
-      opacity: 0.5;
-    }
     .statusGender {
       display: flex;
       align-items: center;
@@ -109,16 +106,18 @@ export default {
   }
 }
 .veryHeight {
-  height: 350px;
+  height: 300px;
+  grid-template-columns: 0.5fr 1fr;
   @media (max-width: 620px) {
-    height: 700px;
+    height: 600px;
+    grid-template-columns: 1fr;
   }
   .character__image {
-    height: 350px;
+    height: 300px;
   }
   .character__description {
     padding: 2rem;
-    height: 350px;
+    height: 300px;
   }
 }
 </style>

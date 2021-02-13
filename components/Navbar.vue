@@ -7,7 +7,7 @@
       <ul>
         <li><nuxt-link to="/">Home</nuxt-link></li>
         <li><nuxt-link to="/characters">Characters</nuxt-link></li>
-        <li><nuxt-link to="/episodes">Episodes</nuxt-link></li>
+        <!-- <li><nuxt-link to="/episodes">Episodes</nuxt-link></li> -->
       </ul>
     </nav>
   </div>
@@ -34,9 +34,9 @@ export default {};
       li {
         margin-left: 1.5rem;
       }
-      @media (max-width: 620px) {
+      /* @media (max-width: 620px) {
         display: none;
-      }
+      } */
       .nuxt-link-exact-active {
         background-color: var(--color-dark);
         padding: 1rem;

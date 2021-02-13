@@ -4,12 +4,16 @@
       <h2>
         {{ title }}
       </h2>
-      <Loading v-if="characters.length < 1" />
-      <div v-else class="random__container--characters">
+
+      <div class="random__container--characters">
         <div v-for="character in characters" :key="character.id">
           <Character :character="character" />
         </div>
       </div>
+      <Loading v-if="loading" />
+      <button class="btn" v-if="button" @click="loadMore">
+        Load More
+      </button>
     </div>
   </div>
 </template>
@@ -20,11 +24,18 @@ import Loading from "./Loading";
 export default {
   props: {
     characters: { type: Array, default: [] },
-    title: { type: String }
+    title: { type: String },
+    button: { type: Boolean, default: false },
+    loading: { type: Boolean, default: false }
   },
   components: {
     Character,
     Loading
+  },
+  methods: {
+    loadMore() {
+      this.$emit("load");
+    }
   }
 };
 </script>
@@ -40,7 +51,7 @@ export default {
     &--characters {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      grid-gap: 3rem;
+      grid-gap: 1.5rem;
       @media (max-width: 980px) {
         grid-template-columns: 1fr;
       }
@@ -48,6 +59,9 @@ export default {
         grid-template-columns: 1fr;
       }
     }
+  }
+  button {
+    margin-top: 3rem;
   }
 }
 </style>
