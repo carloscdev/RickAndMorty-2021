@@ -9,14 +9,16 @@
           <div></div>
           <p>Find your favorites rick and morty characters</p>
         </div>
-        <button class="btn">
-          <nuxt-link to="/search">SEARCH</nuxt-link>
-        </button>
+        <nuxt-link to="/search">
+          <button class="btn">
+            SEARCH
+          </button>
+        </nuxt-link>
       </div>
       <div class="header__container--image">
         <img
           class="floatUp"
-          :src="require(`../assets/images/${image}.png`)"
+          :src="require(`../assets/images/banner.png`)"
           alt="Rick"
         />
       </div>
@@ -56,6 +58,9 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
+      img {
+        width: 80%;
+      }
     }
   }
   &-description {

@@ -3,5 +3,8 @@ export default function({ $axios, redirect }) {
     if (error.response.status === 500) {
       redirect("/sorry");
     }
+    if (error.response.status === 404) {
+      redirect("/sorry");
+    }
   });
 }

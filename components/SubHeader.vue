@@ -2,9 +2,11 @@
   <div class="subHeader">
     <div class="subHeader__container container">
       <h1>{{ title }}</h1>
-      <button v-if="button" class="btn">
-        <nuxt-link to="/search">SEARCH</nuxt-link>
-      </button>
+      <nuxt-link to="/search">
+        <button v-if="button" class="btn">
+          SEARCH
+        </button>
+      </nuxt-link>
     </div>
   </div>
 </template>

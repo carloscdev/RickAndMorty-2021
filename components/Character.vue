@@ -8,9 +8,9 @@
       <div class="character__description">
         <div>
           <h3>
-            <nuxt-link :to="`/character/${character.id}`">{{
-              character.name
-            }}</nuxt-link>
+            <nuxt-link :to="`/character/${character.id}`">
+              {{ character.name }}</nuxt-link
+            >
           </h3>
           <div class="statusGender">
             <span class="status" :class="statusColor"></span>
@@ -27,6 +27,12 @@
             <br />
           </span>
           <span>{{ character.origin.name }}</span>
+          <br />
+          <span v-if="detail" class="gray">
+            Created:
+            <br />
+          </span>
+          <span v-if="detail">{{ character.created }}</span>
         </div>
       </div>
     </div>
@@ -37,7 +43,8 @@
 export default {
   props: {
     character: { type: Object, default: {} },
-    height: { type: Boolean, default: false }
+    height: { type: Boolean, default: false },
+    detail: { type: Boolean, default: false }
   },
   computed: {
     statusColor() {
@@ -54,7 +61,7 @@ export default {
 <style lang="scss">
 .character {
   &__container {
-    height: 210px;
+    height: 230px;
     width: 100%;
     display: grid;
     grid-template-columns: 0.7fr 1fr;
@@ -65,15 +72,18 @@ export default {
       box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.48);
     }
     @media (max-width: 620px) {
-      height: 420px;
+      height: 480px;
       grid-template-columns: 1fr;
     }
   }
   &__image {
     background-position: top center;
     background-size: cover;
-    height: 210px;
+    height: 230px;
     background-repeat: no-repeat;
+    @media (max-width: 620px) {
+      height: 250px;
+    }
   }
   &__description {
     color: var(--color-white);
@@ -117,6 +127,9 @@ export default {
   }
   .character__description {
     padding: 2rem;
+    @media (max-width: 620px) {
+      padding: 1rem;
+    }
     height: 300px;
   }
 }

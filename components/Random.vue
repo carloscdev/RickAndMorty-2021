@@ -55,9 +55,6 @@ export default {
       @media (max-width: 980px) {
         grid-template-columns: 1fr;
       }
-      @media (max-width: 620px) {
-        grid-template-columns: 1fr;
-      }
     }
   }
   button {

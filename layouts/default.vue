@@ -6,12 +6,46 @@
   </div>
 </template>
 <script>
+import { appConfig } from "@/env";
 import Navbar from "~/components/Navbar";
 import Footer from "~/components/Footer";
 export default {
   components: {
     Navbar,
     Footer
+  },
+  head() {
+    return {
+      title: "Rick And Morty | CCDEV",
+      noscript: [{ innerHTML: "Body No Scripts", body: true }],
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Rick And Morty API"
+        },
+        /* Facebook */
+        { property: "og:image", content: appConfig.logo },
+        { property: "og:url", content: appConfig.urlOficial },
+        { property: "og:title", content: appConfig.title },
+        { property: "og:type", content: appConfig.type },
+        { property: "og:site_name", content: appConfig.title },
+        { property: "og:description", content: appConfig.description },
+
+        /* Whatsapp */
+        { property: "og:image", content: appConfig.logoWhatsapp },
+        { property: "og:url", content: appConfig.urlOficial },
+        { property: "og:title", content: appConfig.title },
+        { property: "og:site_name", content: appConfig.title },
+        { property: "og:description", content: appConfig.description },
+
+        /* Twitter */
+        { name: "twitter:url", content: appConfig.urlOficial },
+        { name: "twitter:image", content: appConfig.logo },
+        { name: "twitter:title", content: appConfig.title },
+        { name: "twitter:description", content: appConfig.description }
+      ]
+    };
   }
 };
 </script>
