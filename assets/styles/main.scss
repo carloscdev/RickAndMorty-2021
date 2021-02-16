@@ -102,6 +102,9 @@ p {
     border-bottom:1px solid #439107;
     transition: all 0.1s ease 0s;    
   }
+  @media (max-width: 620px)  {
+    margin: 0 auto;
+  }
 
 }
 
