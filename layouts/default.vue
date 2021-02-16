@@ -3,6 +3,9 @@
     <Navbar />
     <Nuxt />
     <Footer />
+    <button class="btn btn-float" @click="scrollTop">
+      ▲
+    </button>
   </div>
 </template>
 <script>
@@ -13,6 +16,15 @@ export default {
   components: {
     Navbar,
     Footer
+  },
+  methods: {
+    scrollTop() {
+      window.scroll({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+      });
+    }
   },
   head() {
     return {
@@ -68,33 +80,11 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+.btn-float {
+  position: fixed;
+  border-radius: 50%;
+  padding: 0.4rem 0.6rem;
+  bottom: 1rem;
+  right: 1rem;
 }
 </style>

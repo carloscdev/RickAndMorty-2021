@@ -3,7 +3,7 @@
     <div class="header__container container">
       <div class="header__container--texto">
         <h1>
-          Rick &amp; Morty API
+          Rick &amp; Morty
         </h1>
         <div class="header-description">
           <div></div>

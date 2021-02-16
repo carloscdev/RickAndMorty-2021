@@ -1,5 +1,5 @@
 <template>
-  <div class="character">
+  <div class="character" data-aos="zoom-out-up">
     <div class="character__container" :class="height ? 'veryHeight' : ''">
       <div
         class="character__image"
@@ -66,6 +66,7 @@ export default {
     display: grid;
     grid-template-columns: 0.7fr 1fr;
     background-color: var(--color-gray-dark);
+    border-bottom: 5px solid #1c1c1f;
     border-radius: 10px;
     overflow: hidden;
     &:hover {
