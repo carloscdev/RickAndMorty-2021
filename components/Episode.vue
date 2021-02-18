@@ -34,9 +34,13 @@ export default {
   },
   methods: {
     async getEpisode() {
-      this.episodeId = this.episode.slice(32);
-      const res = await this.$axios.$get(`${this.episodeId}`);
-      this.episodeDetail = res;
+      try {
+        this.episodeId = this.episode.slice(32);
+        const res = await this.$axios.$get(`${this.episodeId}`);
+        this.episodeDetail = res;
+      } catch (error) {
+        console.log("episode", error);
+      }
     }
   }
 };

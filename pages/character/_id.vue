@@ -28,7 +28,6 @@ export default {
   },
   data() {
     return {
-      idC: "",
       character: {
         name: "",
         created: "",
@@ -43,15 +42,18 @@ export default {
       loading: true
     };
   },
-  /* async asyncData({ params, $axios }) {
-    const res = await $axios.$get(`character/${params.id}`);
-    return {
-      character: res,
-      idC: params.id,
-      loading: false
-    };
-  } */
-  created() {
+  async asyncData({ params, $axios }) {
+    try {
+      const res = await $axios.$get(`character/${params.id}`);
+      return {
+        character: res,
+        loading: false
+      };
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  /*  created() {
     this.characterDetail();
   },
   methods: {
@@ -62,14 +64,13 @@ export default {
           `character/${this.$route.params.id}`
         );
         this.character = res;
-        this.idC = this.$route.params.id;
         this.loading = false;
       } catch (error) {
         this.$router.push("/sorry");
         this.loading = false;
       }
     }
-  }
+  } */
 };
 </script>
 
