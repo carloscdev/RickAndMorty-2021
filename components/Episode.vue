@@ -51,6 +51,7 @@ export default {
   border-radius: 10px;
   display: flex;
   align-items: center;
+  border-bottom: 5px solid #1c1c1f;
   &:hover {
     box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.48);
   }

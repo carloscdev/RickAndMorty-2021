@@ -3,7 +3,7 @@
     <div class="footer__container-container">
       <span
         >❮ ❯ by -
-        <a href="https:/carlosc.tech" target="_blank">CCDEV 2021</a>
+        <a href="https://carlosc.tech" target="_blank">CCDEV 2021</a>
       </span>
     </div>
   </div>

@@ -84,7 +84,7 @@ html {
   position: fixed;
   border-radius: 50%;
   padding: 0.4rem 0.6rem;
-  bottom: 1rem;
-  right: 1rem;
+  bottom: 2rem;
+  right: 2rem;
 }
 </style>

@@ -29,17 +29,45 @@ export default {
   data() {
     return {
       idC: "",
-      character: {},
+      character: {
+        name: "",
+        created: "",
+        epise: "",
+        gender: "",
+        image: "",
+        location: { name: "" },
+        origin: { name: "" },
+        species: "",
+        status: ""
+      },
       loading: true
     };
   },
-  async asyncData({ params, $axios }) {
+  /* async asyncData({ params, $axios }) {
     const res = await $axios.$get(`character/${params.id}`);
     return {
       character: res,
       idC: params.id,
       loading: false
     };
+  } */
+  created() {
+    this.characterDetail();
+  },
+  methods: {
+    async characterDetail() {
+      this.loading = true;
+      try {
+        const res = await this.$axios.$get(
+          `character/${this.$route.params.id}`
+        );
+        this.character = res;
+        this.idC = params.id;
+        this.loading = false;
+      } catch (error) {
+        this.loading = false;
+      }
+    }
   }
 };
 </script>
