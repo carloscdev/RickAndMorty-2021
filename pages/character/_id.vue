@@ -5,14 +5,7 @@
       <div class="characterId__container container">
         <Character :character="character" :height="true" :detail="true" />
       </div>
-      <div class="characterId__episode container">
-        <h2>Episodes</h2>
-        <div>
-          <div v-for="(e, index) in character.episode" :key="index">
-            <Episode :episode="e" />
-          </div>
-        </div>
-      </div>
+
       <Loading v-if="loading" />
     </div>
   </div>
@@ -64,6 +57,7 @@ export default {
         this.character = res;
         this.idC = params.id;
         this.loading = false;
+        console.log(res);
       } catch (error) {
         this.loading = false;
       }

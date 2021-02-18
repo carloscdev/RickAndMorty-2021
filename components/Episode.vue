@@ -35,7 +35,6 @@ export default {
   methods: {
     async getEpisode() {
       this.episodeId = this.episode.slice(32);
-      console.log(this.episodeId);
       const res = await this.$axios.$get(`${this.episodeId}`);
       this.episodeDetail = res;
     }
