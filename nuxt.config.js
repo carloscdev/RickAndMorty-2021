@@ -41,6 +41,9 @@ export default {
       mode: "client"
     }
   ],
+  generate: {
+    fallback: true
+  },
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
